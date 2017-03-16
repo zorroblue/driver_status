@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{%load staticfiles %}
+{% block content %}
+
+<div id = "the_table">
+<h3>Drivers</h3>
+<table style="width:70%" >
+	<tr>
+		<th>Name</th>
+	    <th>Number</th>
+	    <th>Status</th> 
+	</tr>
+	{% for c in drivers%}
+		<tr>
+			<td >{{c.name}}</td>
+		    <td>{{c.driver_number}}</td>
+		    <td>{{c.status}}</td> 
+		</tr>
+	{%endfor%}&nbsp
+</table>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'main.js' %}"></script>
+{%endblock %}
