@@ -13,7 +13,11 @@
             <tr>
                 <td>{{c.name}}</td>
                 <td>{{c.driver_number}}</td>
-                <td>{{c.status}}</td>
+                {% ifequal c.status "Free" %}
+                	<td bgcolor="#00FF00">{{c.status}}</td>
+                {% else %}
+                	<td bgcolor="#00FF00">{{c.status}}</td>
+            	{% endifequal %}
             </tr>
             {%endfor%}
         </tbody>
