@@ -5,6 +5,6 @@
           success: function(data) {
           $('#the_table').html(data);
           }
-          setTimeout(update,5000)
+          setTimeout(update,1000)
     });
 })();

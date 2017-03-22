@@ -6,11 +6,17 @@ from django.shortcuts import render_to_response,render,get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.template import RequestContext
 from django.contrib import messages
+from django.core import serializers
 
 from cab.models import *
 from django.views.decorators.csrf import csrf_exempt
 import hashlib
+import json
 
+def drivers_api(request):
+	#return a JSON response
+	drivers = Driver.objects.all()
+	return JsonResponse(json.loads(serializers.serialize('json',drivers)),safe = False)
 
 def display_drivers(request):
 	#display the drivers

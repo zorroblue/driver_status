@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^cabsharing', views.display_drivers, name = 'display_drivers'),    
     url(r'^update', views.update_status, name = 'update_status'),
     url(r'^login', views.login, name = 'login'),
-    url(r'^register', views.register,name = 'register')
+    url(r'^register', views.register,name = 'register'),
+    url(r'^driverapi',views.drivers_api, name = 'driverapi')
 ]
