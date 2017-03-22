@@ -16,7 +16,15 @@ import json
 def drivers_api(request):
 	#return a JSON response
 	drivers = Driver.objects.all()
-	return JsonResponse(json.loads(serializers.serialize('json',drivers)),safe = False)
+	ans = []
+	for driver in drivers:
+		a = {}
+		a['name'] = driver.name
+		a['number'] = driver.driver_number
+		a['status'] = driver.status
+		ans.append(a)
+	return JsonResponse(json.loads(json.dumps(ans)), safe = False)
+	#return JsonResponse(json.loads(serializers.serialize('json',drivers)),safe = False)
 
 def display_drivers(request):
 	#display the drivers
