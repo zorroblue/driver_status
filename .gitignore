@@ -19,6 +19,7 @@ cab_sharing/env.txt
 # Sensitive Data
 credentials.py
 credentials.pyc
+db.sqlite3
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

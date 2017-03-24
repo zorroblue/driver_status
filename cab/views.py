@@ -13,6 +13,9 @@ from django.views.decorators.csrf import csrf_exempt
 import hashlib
 import json
 
+'''
+This function is for the API which returns the list of the drivers along with the statuses
+'''
 def drivers_api(request):
 	#return a JSON response
 	drivers = Driver.objects.all()
@@ -26,12 +29,18 @@ def drivers_api(request):
 	return JsonResponse(json.loads(json.dumps(ans)), safe = False)
 	#return JsonResponse(json.loads(serializers.serialize('json',drivers)),safe = False)
 
+'''
+Display the list of drivers
+'''
 def display_drivers(request):
 	#display the drivers
 	#if request.method == 'GET':
 	drivers = Driver.objects.all()
 	return render(request, 'main.html',{'drivers' : drivers})
 
+'''
+Update status of a driver
+'''
 @csrf_exempt
 def update_status(request):
 	if request.method=='POST':
@@ -47,7 +56,9 @@ def update_status(request):
 				return JsonResponse({'status':'fail'})
 		else:
 			return JsonResponse({'status' : 'fail'})
-
+'''
+Login
+'''
 @csrf_exempt
 def login(request):
 	if request.method == 'POST':
