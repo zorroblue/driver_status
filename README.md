@@ -1,10 +1,10 @@
 # Driver status
 
-This is an API for a real time driver availabiltiy system. This also includes a standalone website for checking too.
+This is an API for a real time driver availability system. This also includes a standalone website for checking too.
 
 ## Working:
 
-There is an Android app  for drivers and it has a straightforward registration and log-in option. 
+There is an [Android app](https://github.com/zorroblue/DriverStatusApp)  for drivers and it has a straightforward registration and log-in option. 
 Once logged-in, the drivers can change the status in the app and is updated in the dashboard in realtime through API calls.
 
 ## Running:
@@ -19,7 +19,6 @@ To run the django  website in your local system,
 6. Run the server `python manage.py runserver`
 
 It starts running in `localhost:8000/`
-
 
 
 
